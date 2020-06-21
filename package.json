@@ -1,10 +1,10 @@
 {
     "name": "express-typescript-starter",
     "version": "0.1.0",
-    "description": "Aalim.io - An Interactive learning solution",
+    "description": "A node+typescript+mongoose starter boilerplate for rest APIs",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aalimio/backend"
+        "url": "https://github.com/ahsan98/node-typescript-rest-boilerplate"
     },
     "author": "Bowden Kelly",
     "license": "MIT",

@@ -23,7 +23,7 @@ export class Email {
       const mailOptions = {
         subject: 'Activation Email',
         to: `${user.profile.name} <${user.email}>`,
-        from: `AalimIO <${process.env.SENDER_EMAIL}>`,
+        from: `<${process.env.SENDER_EMAIL}>`,
         text: `Hello ${user.profile.name}, Please use the code: ${code} to activate your account.`,
         html: `<p>Hello ${user.profile.name}, </p><p>Please use the code: <b>${code}</b> to activate your account.</p>`,
       };
@@ -44,9 +44,9 @@ export class Email {
       const transporter = this.getTransporter();
 
       const mailOptions = {
-        subject: 'AalimIO Password Reset',
+        subject: 'Password Reset',
         to: `${user.profile.name} <${user.email}>`,
-        from: `AalimIO <${process.env.SENDER_EMAIL}>`,
+        from: `<${process.env.SENDER_EMAIL}>`,
         text: `Hello ${user.profile.name}, Please use the code: ${code} to reset your password.`,
         html: `<p>Hello ${user.profile.name}, </p><p>Please use the code: <b>${code}</b> to reset your password.</p>`,
       };
