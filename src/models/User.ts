@@ -7,21 +7,18 @@ import jwt from 'jsonwebtoken';
 export type UserDocument = mongoose.Document & {
   email: string;
   password: string;
-  passwordResetToken: string;
-  passwordResetExpires: Date;
-  emailVerificationToken: string,
-  isVerified: boolean,
+  passwordResetToken?: string;
+  passwordResetExpires?: Date;
+  emailVerificationToken?: string,
+  isVerified?: boolean,
 
   profile: {
     name: string;
     gender: string;
-    location: string;
-    website: string;
-    picture: string;
   };
 
-  comparePassword: comparePasswordFunction;
-  generateJWT: generateJWTFunction
+  comparePassword?: comparePasswordFunction;
+  generateJWT?: generateJWTFunction
 };
 
 type comparePasswordFunction = (candidatePassword: string, cb: (err: any, isMatch: any) => {}) => void;
