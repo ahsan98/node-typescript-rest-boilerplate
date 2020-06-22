@@ -6,7 +6,7 @@
         "type": "git",
         "url": "https://github.com/ahsan98/node-typescript-rest-boilerplate"
     },
-    "author": "Bowden Kelly",
+    "author": "Ahsan Naveed",
     "license": "MIT",
     "scripts": {
         "build": "npm run build-sass && npm run build-ts && npm run lint && npm run copy-static-assets",
@@ -38,6 +38,7 @@
         "express-validator": "^6.6.0",
         "lodash": "^4.17.15",
         "lusca": "^1.6.1",
+        "moment": "^2.27.0",
         "mongoose": "^5.9.19",
         "nodemailer": "^6.4.10",
         "passport": "^0.4.1",

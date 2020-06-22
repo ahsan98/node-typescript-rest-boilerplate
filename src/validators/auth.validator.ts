@@ -9,8 +9,16 @@ export const emailValidator: Array<RequestHandler> = [
     .isEmail().withMessage('Email is not valid'),
 ];
 
-export const loginValidator: Array<RequestHandler> = emailValidator.concat([
+export const passwordValidator: Array<RequestHandler> = [
   check('password')
+    .not().isEmpty().withMessage('Password is required')
+    .isLength({ min: 6 }).withMessage('Password must have minimum 6 chracters'),
+];
+
+export const loginValidator: Array<RequestHandler> = emailValidator.concat(passwordValidator);
+
+export const changePasswordValidator = passwordValidator.concat([
+  check('oldPassword')
     .not().isEmpty().withMessage('Password is required')
     .isLength({ min: 6 }).withMessage('Password must have minimum 6 chracters'),
 ]);
@@ -29,3 +37,5 @@ export const activationValidator = emailValidator.concat([
     .not().isEmpty().withMessage('Verification code is required')
     .isLength({ min: 6 }).withMessage('Invalid code'),
 ]);
+
+export const resetPasswordValidator = activationValidator.concat(passwordValidator);
